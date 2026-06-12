@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Projects/chip8/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
