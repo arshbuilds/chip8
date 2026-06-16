@@ -51,6 +51,13 @@ build CMakeFiles/chip8.dir/src/main.cpp.obj: CXX_COMPILER__chip8_unscanned_ D$:/
   OBJECT_FILE_DIR = CMakeFiles\chip8.dir\src
   TARGET_SUPPORT_DIR = CMakeFiles\chip8.dir
 
+build CMakeFiles/chip8.dir/src/chip8.cpp.obj: CXX_COMPILER__chip8_unscanned_ D$:/Projects/chip8/src/chip8.cpp || cmake_object_order_depends_target_chip8
+  DEP_FILE = CMakeFiles\chip8.dir\src\chip8.cpp.obj.d
+  INCLUDES = -ID:/Projects/chip8/include
+  OBJECT_DIR = CMakeFiles\chip8.dir
+  OBJECT_FILE_DIR = CMakeFiles\chip8.dir\src
+  TARGET_SUPPORT_DIR = CMakeFiles\chip8.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target chip8
@@ -59,7 +66,7 @@ build CMakeFiles/chip8.dir/src/main.cpp.obj: CXX_COMPILER__chip8_unscanned_ D$:/
 #############################################
 # Link the executable chip8.exe
 
-build chip8.exe: CXX_EXECUTABLE_LINKER__chip8_ CMakeFiles/chip8.dir/src/main.cpp.obj
+build chip8.exe: CXX_EXECUTABLE_LINKER__chip8_ CMakeFiles/chip8.dir/src/main.cpp.obj CMakeFiles/chip8.dir/src/chip8.cpp.obj
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\chip8.dir
   POST_BUILD = cd .
