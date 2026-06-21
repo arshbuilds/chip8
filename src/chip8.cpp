@@ -155,9 +155,11 @@ void Chip8::executeInstruction()
         case 0x3:
             op8XOR();
             break;
+
         case 0x4:
             op8ADD();
             break;
+ 
         case 0x5:
             op8SUB();
             break;
@@ -272,7 +274,7 @@ void Chip8::prtScr()
     {
         for (int x = 0; x < 64; x++)
         {
-            std::cout << (display[x][y] ? "■" : ".");
+            std::cout << (display[x][y] ? "#" : ".");
         }
         std::cout << std::endl;
     }
@@ -355,7 +357,6 @@ void Chip8::opDrawSprite()
             }
         }
     }
-    prtScr();
 }
 
 void Chip8::opAddImm()
