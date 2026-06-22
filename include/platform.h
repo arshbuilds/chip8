@@ -13,5 +13,5 @@ public:
     Platform(int w, int h, int s);
 
     void render(bool display[64][32]);
-    Platform::~Platform();
+    ~Platform();
 };

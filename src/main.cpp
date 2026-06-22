@@ -18,7 +18,7 @@ int main()
     Platform platform(640, 320, 10);
     chip8.loadRom("D:\\Projects\\chip8\\Pong.ch8");
     constexpr auto CPU_DELAY =
-        std::chrono::microseconds(850);
+        std::chrono::microseconds(1000);
     auto lastTimerUpdate = std::chrono::high_resolution_clock::now();
 
     bool running = true;
@@ -168,10 +168,10 @@ int main()
             lastTimerUpdate = nowTimer;
         }
 
+        platform.render(chip8.display);
         std::this_thread::sleep_for(
             std::chrono::microseconds(CPU_DELAY));
     }
-    platform.render(chip8.display);
 
     return 0;
 }
