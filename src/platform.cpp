@@ -39,7 +39,7 @@ Platform::Platform(int w, int h, int s)
         {
             for (int x = 0; x < 64; x++)
             {
-                if (display[y][x])
+                if (display[x][y])
                 {
                     SDL_Rect pixel =
                     {
@@ -53,4 +53,11 @@ Platform::Platform(int w, int h, int s)
                 }
             }
             SDL_RenderPresent(renderer);
+}
+
+Platform::~Platform()
+{
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
 }

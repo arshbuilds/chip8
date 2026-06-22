@@ -77,11 +77,14 @@ void Chip8::fetchInstruction()
     this->opcode = opcode;
 }
 
-void Chip8::updateTimers(){
-    if(delayTimer > 0){
+void Chip8::updateTimers()
+{
+    if (delayTimer > 0)
+    {
         delayTimer--;
     }
-    if(soundTimer > 0){
+    if (soundTimer > 0)
+    {
         soundTimer--;
     }
 }
@@ -98,6 +101,7 @@ void Chip8::executeInstruction()
         if (opcode == 0x00E0)
         {
             opClearScreen();
+            
         }
         else if (opcode == 0x00EE)
         {
@@ -159,7 +163,7 @@ void Chip8::executeInstruction()
         case 0x4:
             op8ADD();
             break;
- 
+
         case 0x5:
             op8SUB();
             break;
@@ -643,5 +647,15 @@ void Chip8::opCopyItoVx()
     for (int i = 0; i <= x; i++)
     {
         V[i] = memory[I + i];
+    }
+}
+
+void Chip8::cycle()
+{
+    int instructionsPerFrame = 5;
+    for (int i = 0; i < instructionsPerFrame; i++)
+    {
+        fetchInstruction();
+        executeInstruction();
     }
 }

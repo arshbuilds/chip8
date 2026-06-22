@@ -98,4 +98,6 @@ public:
     void opVxToBCD();
     void opCopyVxToI();
     void opCopyItoVx();
+    
+    void cycle();
 };
